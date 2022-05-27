@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    public class İftar
+    {
+        private string aile_soyadi;
+        public int kişi;
+        public string aileSoyadi
+        {
+            get { return aile_soyadi; }
+            set { aile_soyadi = value; }
+        }
+        public int Kişi
+        {
+            get { return kişi; }
+            set { kişi = value; }
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            İftar aile_soyadi = new İftar();
+            İftar kişi = new İftar();
+
+            Console.WriteLine("Soyadiniz Nedir?: ");
+            aile_soyadi.aileSoyadi = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Kac kisi katilacaksiniz?: ");
+            kişi.Kişi = Convert.ToInt32(Console.ReadLine());
+
+
+            if (kişi.Kişi > 30)
+            {
+                Console.WriteLine("{0} ailesine 1 nolu buyuk salonumuzda {1} kişilik yer ayrılmıştır.", aile_soyadi.aileSoyadi.ToUpper() , kişi.Kişi);
+            }
+            else if (kişi.Kişi > 20 && kişi.Kişi < 30)
+            {
+                Console.WriteLine("{0} ailesine 2 nolu ortanca salonumuzda {1} kişilik yer ayrılmıştır.", aile_soyadi.aileSoyadi.ToUpper() , kişi.Kişi);
+            }
+            else
+            {
+                Console.WriteLine("{0} ailesine 3 nolu aile salonumuzda {1} kişilik yer ayrılmıştır.", aile_soyadi.aileSoyadi.ToUpper(), kişi.Kişi);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
